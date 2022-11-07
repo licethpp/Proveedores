@@ -1,0 +1,11 @@
+
+.image{
+    height:40em; background-size:cover; 
+    background-image:url('../inicio/Imagenes/smartphone-g48cd19c42_1920.jpg');
+    background-position:50% 50%;
+    width: 100%;
+  }
+  h3{
+    text-align: center;
+  }
+  

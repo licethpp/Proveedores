@@ -1,0 +1,123 @@
+<div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset 2"> 
+    <h3>Añadir nuevo proveedor</h3>
+    <!--En primer lugar modificamos el inicio de la etiqueta form en el archivo addprovee.component.html:-->
+    <form (ngSubmit)="onSubmit()" FormGroup="ngForm" (click)="add"> 
+<!-- Además, tenemos que modificar cada campo del formulario, para añadir 
+ngModel y el atributo name-->
+
+    <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input type="text" class="form-control"id="nombre"
+        ngModel
+        [(ngModel)]="nieuwproveedor.nombre"
+        name="nombre"
+        >
+        </div>
+
+    <div class="form-group">
+    <label for="cif">C.I.F.</label>
+    <input type="text"class="form-control"id="cif" 
+    ngModel
+    [(ngModel)]="nieuwproveedor.cif"
+    name="cif">
+
+ </div>
+ <div class="form-group">
+ <label for="direccion">Dirección</label>
+ <input type="text" class="form-control"id="direccion"
+ ngModel 
+ [(ngModel)]="nieuwproveedor.direccion"
+
+ name="direccion">
+ </div>
+
+ <div class="form-group">
+ <label for="cp">Código Postal</label>
+ <input type="text" 
+ class="form-control"
+ id="cp"
+ ngModel 
+ [(ngModel)]="nieuwproveedor.cp"
+ name="cp"
+ >
+ </div>
+
+ <div class="form-group">
+ <label for="localidad">Localidad</label>
+ <input type="text" 
+ class="form-control"
+ id="localidad" 
+ ngModel 
+ [(ngModel)]="nieuwproveedor.localidad"
+ name="localidad">
+ </div>
+
+ <div class="form-group">
+ <label for="provincia">Provincia</label>
+ <select class="form-control" 
+ id="provincia"
+ ngModel
+ [(ngModel)]="nieuwproveedor.provincia"
+ name="provincia">
+ <option value="">Seleccione la provincia</option> 
+ <option *ngFor="let provincia of provincias"
+ [value]="provincia">{{provincia}} </option> 
+ </select>
+ </div> 
+ <div class="form-group">
+ <label for="telefono">Teléfono</label>
+ <input type="number" 
+ class="form-control"
+ id="telefono"
+ ngModel 
+ [(ngModel)]="nieuwproveedor.telefono"
+ name="telefono"
+  >
+ </div>
+ <div class="form-group">
+ <label for="email">Correo Electrónico</label>
+ <i class="fa fa-check-circle check" 
+ *ngIf="email.valid"></i>
+ <input type="text" 
+ class="form-control"
+ id="email"
+ ngModel 
+ [(ngModel)]="nieuwproveedor.email"
+ name="email"
+ required
+ email
+ #email="ngModel"
+ >
+ <p class="alert alert-danger" *ngIf="email.invalid && email.touched"> 
+    Por favor introduzca una dirección de correo correcta.
+    </p>
+ </div>
+
+ <div class="form-group">
+ <label for="contacto">Persona de contacto</label>
+ <input type="text" 
+ class="form-control"
+ 
+ id="contacto"
+ ngModel 
+ [(ngModel)]="nieuwproveedor.contacto"
+ name="contacto">
+ <br>
+ </div>
+ <button type="submit" class="btn btn-success"  [disabled]="!formpro.valid" (click)="add()">Añadir Proveedor</button>
+ <button class="btn btn-primary" (click)="add()">
+    add
+</button>
+ <p class="alert alert-danger " *ngIf="!formpro.valid"> 
+    Por favor complete todos los campos
+    </p> 
+   
+
+ </form>
+ 
+ <!--<pre>{{ proveedor | json }}-->
+
+ </div>
+</div>
+

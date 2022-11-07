@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+   <!-- Brand/logo -->
+   <a class="navbar-brand" href="#">
+    <img src="bird.jpg" alt="logo" style="width:40px;">
+  </a>
+    <a class="navbar-brand" href="#">Compras App</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li  routerLinkActive="active"[routerLinkActiveOptions]="{exact:true}"  >
+          <a class="nav-link" routerLink="/" >Inicio </a>
+        </li>
+        <li routerLinkActive="active"  >
+            <a class="nav-link"  routerLink="/Artikelen">Artikelen</a>
+          </li>
+        <li routerLinkActive="active"  >
+          <a class="nav-link"  routerLink="/proveedores">proveedores</a>
+        </li>
+        <li routerLinkActive="active"  >
+            <a class="nav-link" routerLink="/addpres">Añadir Presupuesto</a>
+        </li>
+        <li  routerLinkActive="active"  >
+            <a class="nav-link" routerLink="/presupuestos">Presupuestos </a>
+        </li> 
+        <li  routerLinkActive="active"  >
+            <a class="nav-link" routerLink="/registro">Registro </a>
+         </li>
+         <li *ngIf="!isAuth()">
+            <a class="nav-link" routerLink="/iniciosesion">Inicie sesión</a>
+           </li>
+
+      
+       
+      </ul>
+    </div>
+   
+  </nav>
+ 
